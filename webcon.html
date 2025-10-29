@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyuan.web cá nhân</title>
+    <link rel="stylesheet" href="/webcon/style.css">
+</head>
+<body>
+    <a href="MainWeb.html" class="back-btn">BACK</a>
+ <section class="home" id="home">
+       <div class="home-content">
+        <h1>Đây là liên kết trang mạng xã hội nào đó</h1>
+        <h2>Học được cách làm cái thẻ cái mê quá trời:</h2>
+    </div>
+ </section>
+    <div class="card blue">
+        <div class="product">
+            <span class="elements">Cryo</span>
+            <span class="game">GENSHIN</span>
+            <span class="number">01</span>
+            <img src="/webcon/images/ganyu.png">
+        </div>
+        <div class="title">
+            <h2>GANYU</h2>
+        </div>
+    </div>
+
+    <div class="card purple">
+        <div class="product">
+            <span class="elements">Electro</span>
+            <span class="game">GENSHIN</span>
+            <span class="number">02</span>
+            <img src="/webcon/images/keqing.png">
+        </div>
+        <div class="title">
+            <h2>KEQING</h2>
+        </div>
+    </div>
+    <script src="/webcon/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 5000,
+            glare: true,
+            'max-glare': 0.5,
+        });
+    </script>
+    
+</body>
+</html>

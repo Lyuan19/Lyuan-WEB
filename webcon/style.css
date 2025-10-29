@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,800;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+}
+.home {
+ background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff,
+    #ff0000
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 5s linear infinite;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  text-transform: uppercase;
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+body {
+    background: #120D24;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card {
+    width: 220px;
+    height: 340px;
+    border-radius: 12px;
+    transform-style: preserve-3d;
+}
+.card.blue {
+    background: linear-gradient(135deg, #09AFFF, #125575);
+}
+.card.purple {
+    background: linear-gradient(135deg, #9f3cb88c, #440b55);
+}
+
+.card .product {
+    height: 85%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.product .elements {
+    font-size: 40px;
+    line-height: 40px;
+    font-style: italic;
+    opacity: 0.25;
+}
+.product .game {
+    font-size: 35px;
+    line-height: 35px;
+    font-style: italic;
+    opacity: 0.7;
+}
+.product img {
+    height: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-35%, -45%, 0);
+    pointer-events: none;
+}
+.product .number {
+    background: rgba(255, 255, 255, 0.15);
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: -20px;
+    padding: 5px 20px;
+    border-radius: 99px 0 0 99px;
+}
+
+.card .title {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 12px 12px;
+    transform-style: preserve-3d;
+}
+.card.blue .title {
+    background: #039BE5;
+}
+.card.purple .title {
+    background: #290141;
+}
+
+.card:hover .product img {
+    transform: translate3d(-50%, -40%, 80px);
+}
+.card:hover .product .elements {
+    transform: translateZ(40px);
+    opacity: 1;
+}
+.card:hover .product .game {
+    transform: translateZ(40px);
+    opacity: 0.85;
+}
+.card:hover .product .number {
+    transform: translateZ(20px);
+}
+.card:hover .title h2 {
+    transform: translateZ(20px);
+}
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  z-index: 99;
+}

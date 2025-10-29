@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  transition: 0.3s ease-in-out;
+  color: white;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  z-index: 99;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
+}
+
+/* ===== SECTIONS ===== */
+.cv-section {
+  background: linear-gradient(135deg, #0a192f, #0e2447, #125575);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.offer-section {
+  background: linear-gradient(135deg, #2b0d0d, #6b2525, #a53131);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+.cv-container,
+.offer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1100px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* ===== CARD BASE ===== */
+.card {
+  width: 240px;
+  height: 360px;
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.card.blue {
+  background: linear-gradient(135deg, #09AFFF, #125575);
+}
+.card.purple {
+  background: linear-gradient(135deg, #6b2525, #a53131);
+}
+
+/* ===== CARD CONTENT ===== */
+.card .product {
+  height: 85%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.product .elements {
+  font-size: 40px;
+  font-style: italic;
+  opacity: 0.25;
+}
+
+.product .game {
+  font-size: 35px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.product img {
+  height: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-35%, -45%, 0);
+  pointer-events: none;
+}
+
+.product .number {
+  background: rgba(255,255,255,0.15);
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: -20px;
+  padding: 5px 20px;
+  border-radius: 99px 0 0 99px;
+}
+
+.card .title {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 12px 12px;
+  transform-style: preserve-3d;
+}
+.card.blue .title {
+  background: #039BE5;
+}
+.card.purple .title {
+  background: #e00e0e;
+}
+
+/* ===== HOVER ===== */
+.card:hover .product img {
+  transform: translate3d(-50%, -40%, 80px);
+}
+.card:hover .product .elements {
+  transform: translateZ(40px);
+  opacity: 1;
+}
+.card:hover .product .game {
+  transform: translateZ(40px);
+  opacity: 0.85;
+}
+.card:hover .product .number {
+  transform: translateZ(20px);
+}
+.card:hover .title h2 {
+  transform: translateZ(20px);
+}
+
+/* ===== CV CONTENT ===== */
+.cv-content {
+  flex: 1;
+  max-width: 550px;
+}
+.cv-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.cv-content span {
+  color: #66FCF1;
+}
+.cv-content p {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  opacity: 0.9;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== OFFER CONTENT ===== */
+.offer-content {
+  flex: 1;
+  max-width: 500px;
+}
+.offer-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.offer-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.offer-content input,
+.offer-content select,
+.offer-content textarea {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  resize: none;
+}
+.offer-content button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.offer-content button:hover {
+  background: #e63946;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .cv-container, .offer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card {
+    order: -1;
+    width: 200px;
+    height: 300px;
+  }
+  .cv-content, .offer-content {
+    max-width: 100%;
+  }
+  .product img {
+    width: 180px;
+  }
+}

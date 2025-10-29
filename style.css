@@ -1,0 +1,859 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+}
+
+:root {
+    --bg-color:  #1f2833;
+    --snd-bg-color: #1f142c;
+    --text-color: #ffffff;
+    --main-color: #66fcf1;
+}
+
+html {
+    font-size: 62.5%;
+    overflow: auto;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/*header section code*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    background: #0b0c10;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+  
+@keyframes rainbowMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+
+.logo:hover {
+    transform: scale(1.09);
+}
+.logo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff,
+    #ff0000
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 5s linear infinite;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  text-transform: uppercase;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px #66fcf1);
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+.navbar a {
+    font-size: 1.9rem;
+    color: var(--main-color);
+    margin-left: 4rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--text-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: #66fcf1;
+    cursor: pointer;
+    display: none;
+}
+/* Home Section */
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 25vw;
+    animation: floatImage 4s ease-in-out infinite;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 35px var(--main-color),
+                0 0 55px var(--main-color);
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-content {
+    margin-left: 5rem;
+}
+
+.home-content h3 {
+    font-size: 3.7rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .3s ease-in-out;
+}
+
+.social-media a:hover {
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color); 
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: none;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1.6rem var(--main-color);
+}
+
+/* About Section */
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+ 
+}
+
+.about-img img {
+    width: 40vw;
+    border: 2px solid var(--main-color);
+    animation: floatImage 4s ease-in-out infinite;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 35px var(--main-color),
+                0 0 55px var(--main-color);
+}
+.heading {
+    text-align: center;
+    font-size: 6rem;
+}
+
+.about-content {
+    padding: 0 4rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 3rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+/* Services Section */
+
+.services h2 {
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-box {
+    flex: 1 1 30rem;
+    background: var(--snd-bg-color);
+    padding: 6rem 2rem 6rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .3rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.services-container .services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/* ******************Testimonials Section********************* */
+
+.testimonials {
+  background: var(--snd-bg-color);
+  padding: 6rem 9% 4rem;
+}
+
+.testimonials .heading {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.testimonial-item {
+  background: var(--snd-bg-color);
+  border: 0.3rem solid var(--bg-color);
+  border-radius: 2rem;
+  padding: 2rem;
+  min-height: 420px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+
+.testimonial-item:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);
+}
+
+.testimonial-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.testimonial-item h2 {
+  font-size: 2.4rem;
+}
+
+.testimonial-item p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+#star {
+  color: gold;
+  font-size: 2rem;
+}
+
+
+@media (max-width: 991px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-item {
+    max-width: 100%;
+  }
+}
+
+
+
+/* ******************Contact Section********************* */
+
+.contact {
+    background-color: var(--bg-color);
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+    color: var(--main-color);
+}
+
+.contact form {
+    max-width: 80rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: #371f53;
+    border-radius: 0.8rem;
+    border: 0.25rem solid var(--main-color);
+    margin: 0.7rem 0;
+    resize: none;
+}
+
+.contact form .input-box input {
+    width: 49%;
+    margin: 0.7rem 0.35rem;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+}
+
+/* ******************Footer Section********************* */
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--snd-bg-color);
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.footer .social a{
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.footer .copyright{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-color);
+}
+/* BreakPoint */
+
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width:991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3%;
+    }
+    .services{
+        padding: 7rem
+    }
+    
+    .testimonials .wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .contact form .input-box input {
+        width: 100%;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+@media (max-width:786px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 255px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        transition: all 0.5s ease;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 25px var(--main-color);
+        border-radius: 0.8rem;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 17px;
+        font-size: 22px;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-content{
+        order: 2;
+        margin-left: 1rem;
+    }
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .about{
+        flex-direction: column-reverse;
+    }
+    .about-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .services h2{
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width:617px) {
+    .home-img img{
+        width: 70vw;
+        margin-top: 8rem;
+    }
+    .about-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+@media (max-width:450px) {
+    html{
+        font-size: 50%;
+    }
+}
+
+
+/* --- BẮT ĐẦU: STYLES CHO MUSIC PLAYER (ĐÃ SỬA LỖI RESPONSIVE) --- */
+
+/* Container chính của Music Player - Định vị cố định ở góc dưới bên phải */
+.music-container {
+  /* CHỈNH SỬA VỊ TRÍ CỐ ĐỊNH */
+  position: fixed;
+  bottom: 50px; 
+  right: 50px; 
+  z-index: 10000; /* Đảm bảo nằm trên mọi thứ */
+  
+  /* Hiệu ứng Kính mờ (Frosted Glass) */
+  background-color: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.18); 
+  border-radius: 12px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  
+  display: flex;
+  flex-direction: row; /* Đĩa bên phải */
+  align-items: center; 
+  
+  padding: 10px; 
+  width: 450px; 
+  max-width: 90vw; /* QUAN TRỌNG: Cho phép co lại nếu màn hình hẹp */
+  height: 125px; 
+  
+  transform: none; 
+  transition: all 0.3s ease; /* Đảm bảo animation/transition hoạt động */
+}
+
+/* --- Ảnh bìa (Đĩa Xoay) --- */
+.img-container {
+  position: relative;
+  width: 105px; 
+  height: 105px;
+  z-index: 2; 
+  flex-shrink: 0; 
+  margin-left: 15px; 
+  margin-right: 0; 
+  
+  border-radius: 50%; 
+  /* Viền trắng ôm sát đĩa */
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5), 
+              0 0 0 7px rgba(0, 0, 0, 0.05);    
+}
+
+.img-container::after {
+  content: '';
+  /* Sử dụng màu nền chính của web để làm lỗ đĩa nổi bật hơn */
+  background-color: var(--bg-color); 
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  width: 10px; 
+  height: 10px;
+  transform: translate(-50%, -50%); 
+  z-index: 3; 
+}
+
+.img-container img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 100%; 
+  width: 100%; 
+  position: absolute; 
+  top: 0;
+  right: 0; 
+  left: 0;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Phần Nội dung bên trái (Content-Wrapper) --- */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: flex-start;
+  flex-grow: 1; 
+  height: 100%; 
+  padding: 10px 0; 
+  padding-right: 0; 
+}
+
+/* --- Hàng 1: Tiêu đề, Nghệ sĩ --- */
+.header-row {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start;
+  width: 100%;
+}
+
+.song-details {
+  flex-grow: 1; 
+}
+
+.song-title {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+  /* Dùng màu văn bản chính của web */
+  color: var(--text-color); 
+}
+
+.artist-name {
+  margin: 0;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.7); /* Màu phụ cho kính mờ */
+}
+
+/* --- Hàng 2: Thanh tiến trình & Thời gian --- */
+.progress-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.3); /* Nền trong suốt nhẹ */
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 5px 0 0; 
+  height: 4px; 
+  width: 100%;
+}
+
+.progress {
+  background-color: var(--main-color); /* Dùng màu chủ đạo của web cho tiến trình */
+  border-radius: 2px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Hiển thị thời gian */
+.time-display {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%;
+    font-size: 0.7em; 
+    color: rgba(255, 255, 255, 0.7); 
+    margin-top: 2px; 
+}
+
+.time-display span {
+    font-weight: 500;
+}
+
+
+/* --- Hàng 3: Nút điều khiển --- */
+.navigation-row {
+    width: 100%;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  width: 100%;
+}
+
+.action-btn {
+  background-color: transparent; 
+  border: 0;
+  color: var(--text-color); /* Dùng màu văn bản chính cho nút */
+  font-size: 1.1em; 
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0; 
+  transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: var(--main-color);
+}
+
+.action-btn.action-btn-big {
+  color: var(--main-color); /* Màu chủ đạo cho nút Play/Pause */
+  font-size: 2em; 
+  margin: 0 10px; 
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+/* Loại bỏ hoàn toàn music-info cũ */
+.music-info { 
+  display: none !important;
+}
+
+/* --- KẾT THÚC: STYLES CHO MUSIC PLAYER --- */
+
+/* Thêm Media Query riêng cho Music Player để tối ưu hóa trên di động */
+@media (max-width: 500px) {
+    /* 1. CONTAINER CHÍNH */
+    .music-container {
+        /* Cố định ở đáy và căn giữa (thay cho góc phải) */
+        bottom: 15px; 
+        right: 50%;
+        transform: translateX(50%); 
+        
+        width: 90vw; /* Chiếm phần lớn màn hình */
+        max-width: 320px; /* Giới hạn kích thước tối đa cho điện thoại */
+        height: 100px; /* Giảm chiều cao */
+        
+        padding: 5px 10px;
+    }
+    
+    /* 2. ẢNH BÌA */
+    .img-container {
+        width: 80px; /* Giảm kích thước ảnh */
+        height: 80px;
+        margin-left: 5px; /* Giảm margin trái */
+    }
+
+    .img-container::after {
+        width: 8px; /* Giảm lỗ đĩa */
+        height: 8px;
+    }
+
+    /* 3. NỘI DUNG */
+    .content-wrapper {
+        padding: 5px 0; 
+    }
+
+    .song-title {
+        font-size: 1.1em;
+        /* Giữ lại overflow: hidden, white-space: nowrap, text-overflow: ellipsis */
+    }
+
+    .artist-name {
+        font-size: 0.8em;
+    }
+
+    /* 4. THANH TIẾN TRÌNH */
+    .progress-container {
+        height: 3px; 
+        margin-top: 3px;
+    }
+
+    .time-display {
+        font-size: 0.6em; 
+    }
+
+    /* 5. NÚT ĐIỀU KHIỂN */
+    .navigation {
+        margin-top: 5px;
+    }
+    .action-btn {
+        padding: 3px 5px;
+    }
+    .action-btn.action-btn-big {
+        font-size: 1.8em; 
+        margin: 0 8px; 
+    }
+}
